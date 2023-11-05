@@ -13,7 +13,7 @@
     </properties>
 
     <build>
-        <sourceDirectory>src/main/java/com/finalproject/ecommerceapp</sourceDirectory>
+        <sourceDirectory>src/main/java/com/finalproject</sourceDirectory>
 <!--         <testSourceDirectory>Source Code Inspection/src/test/java</testSourceDirectory> -->
         <plugins>
             <plugin>
