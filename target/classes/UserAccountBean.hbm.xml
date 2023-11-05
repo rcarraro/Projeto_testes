@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 22, 2014 2:13:53 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.finalproject.ecommerceapp.pojos.UserAccountBean" table="USERACCOUNTBEAN">
+        <id name="useraccountid" type="long">
+            <column name="USERACCOUNTID" />
+            <generator class="native" />
+        </id>
+        <property name="emailid" type="java.lang.String">
+            <column name="EMAILID" />
+        </property>
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="contactnumber" type="java.lang.String">
+            <column name="CONTACTNUMBER" />
+        </property>
+        <property name="role">
+            <column name="ROLE" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">12</param>
+                <param name="enumClass">com.finalproject.ecommerceapp.pojos.RoleBean</param>
+            </type>
+        </property>
+    </class>
+</hibernate-mapping>

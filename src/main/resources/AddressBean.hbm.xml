@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 22, 2014 2:13:53 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.finalproject.ecommerceapp.pojos.AddressBean" table="ADDRESSBEAN">
+        <id name="addressid" type="long">
+            <column name="ADDRESSID" />
+            <generator class="native" />
+        </id>
+        <property name="streetAddress" type="java.lang.String">
+            <column name="STREETADDRESS" />
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="CITY" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="STATE" />
+        </property>
+        <property name="zipcode" type="java.lang.String">
+            <column name="ZIPCODE" />
+        </property>
+        <property name="country" type="java.lang.String">
+            <column name="COUNTRY" />
+        </property>
+    </class>
+</hibernate-mapping>

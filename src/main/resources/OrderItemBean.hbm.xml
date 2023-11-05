@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 22, 2014 1:29:22 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.finalproject.ecommerceapp.pojos.OrderItemBean" table="ORDERITEMBEAN">
+        <id name="orderitemid" type="long">
+            <column name="ORDERITEMID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="product" class="com.finalproject.ecommerceapp.pojos.ProductBean" fetch="join">
+            <column name="PRODUCT" />
+        </many-to-one>
+        <property name="quantity" type="int">
+            <column name="QUANTITY" />
+        </property>
+        <property name="price" type="float" access="field">
+            <column name="PRICE" />
+        </property>
+        <property name="orderItemStatus" type="java.lang.String">
+            <column name="ORDERITEMSTATUS" />
+        </property>
+        <property name="estimatedDateOfDelivery" type="java.lang.String">
+            <column name="ESTIMATEDDATEOFDELIVERY" />
+        </property>
+    </class>
+</hibernate-mapping>

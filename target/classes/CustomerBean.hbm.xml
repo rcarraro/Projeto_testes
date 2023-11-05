@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 22, 2014 2:13:53 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.finalproject.ecommerceapp.pojos.CustomerBean" table="CUSTOMERBEAN">
+        <id name="customerid" type="long">
+            <column name="CUSTOMERID" />
+            <generator class="native" />
+        </id>
+        <property name="customerfirstname" type="java.lang.String">
+            <column name="CUSTOMERFIRSTNAME" />
+        </property>
+        <property name="customerlastname" type="java.lang.String">
+            <column name="CUSTOMERLASTNAME" />
+        </property>
+        <many-to-one name="address" class="com.finalproject.ecommerceapp.pojos.AddressBean" fetch="join">
+            <column name="ADDRESS" />
+        </many-to-one>
+        <many-to-one name="userAccountBean" class="com.finalproject.ecommerceapp.pojos.UserAccountBean" fetch="join">
+            <column name="USERACCOUNTBEAN" />
+        </many-to-one>
+        <set name="cartItems" table="CART" lazy="false">
+      		<key column="CartID" foreign-key="fk_cart_item"/>
+      		<many-to-many class="com.finalproject.ecommerceapp.pojos.CartItemBean" column="CartItemID" foreign-key="fk_cartItemBean"/>
+    	</set>
+    </class>
+</hibernate-mapping>

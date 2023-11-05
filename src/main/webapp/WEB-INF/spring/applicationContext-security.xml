@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<http auto-config="true">
+	 	<csrf disabled="true"/>
+	 	<intercept-url pattern="/account/checkpoint" access="isAuthenticated()" />
+	 	<intercept-url pattern="/account/login" access="permitAll" />
+	 	<intercept-url pattern="/account/registration" access="permitAll" />
+	 	
+		<form-login 
+			login-page="/account/login"
+		    default-target-url="/account/checkpoint" 
+			authentication-failure-url="/account/login?error" 
+			username-parameter="username"
+			password-parameter="password"
+			login-processing-url="/j_spring_security_check"/>
+		
+		<logout logout-success-url="/account/checkpoint" logout-url="/j_spring_security_logout" />
+	</http>
+	<jdbc-user-service id="userService1" data-source-ref="dataSource" 
+	
+		users-by-username-query="
+              select username,password,1
+              from useraccountbean where username=?" 
+
+    	authorities-by-username-query="
+              select u.username, u.role from useraccountbean u 
+              where u.username =?" 
+	
+	
+	/>
+
+	<authentication-manager>
+        <authentication-provider user-service-ref="userService1"/>
+    </authentication-manager>
+</beans:beans>

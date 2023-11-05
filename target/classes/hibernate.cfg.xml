@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.password">xxxx</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/finalproject_webtools</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.default_schema">finalproject_webtools</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<mapping resource="AddressBean.hbm.xml"></mapping>
+		<mapping resource="CustomerBean.hbm.xml"></mapping>
+		<mapping resource="InvoiceBean.hbm.xml"></mapping>
+		<mapping resource="OrderBean.hbm.xml"></mapping>
+		<mapping resource="OrderItemBean.hbm.xml"></mapping>
+		<mapping resource="PaymentBean.hbm.xml"></mapping>
+		<mapping resource="ProductBean.hbm.xml"></mapping>
+		<mapping resource="ShipmentBean.hbm.xml"></mapping>
+		<mapping resource="UserAccountBean.hbm.xml"></mapping>
+		<mapping resource="SupplierBean.hbm.xml"></mapping>
+		<mapping resource="CategoryBean.hbm.xml"></mapping>
+		<mapping resource="ReviewBean.hbm.xml"></mapping>
+		<mapping resource="CartItemBean.hbm.xml"></mapping>
+	</session-factory>
+</hibernate-configuration>

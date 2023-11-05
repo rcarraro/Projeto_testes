@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 22, 2014 9:58:46 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.finalproject.ecommerceapp.pojos.InvoiceBean" table="INVOICEBEAN">
+        <id name="invoiceid" type="long">
+            <column name="INVOICEID" />
+            <generator class="native" />
+        </id>
+        <property name="invoiceStatus" type="java.lang.String">
+            <column name="INVOICESTATUS" />
+        </property>
+        <property name="totalAmount" type="float">
+            <column name="TOTALAMOUNT" />
+        </property>
+        <property name="taxDue" type="float">
+            <column name="TAXDUE" />
+        </property>
+        <property name="costOfOrder" type="float">
+            <column name="COSTOFORDER" />
+        </property>
+        <property name="date" type="java.lang.String">
+            <column name="DATE" />
+        </property>
+    </class>
+</hibernate-mapping>

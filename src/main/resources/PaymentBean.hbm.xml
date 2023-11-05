@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 22, 2014 9:58:46 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.finalproject.ecommerceapp.pojos.PaymentBean" table="PAYMENTBEAN">
+        <id name="paymentId" type="long">
+            <column name="PAYMENTID" />
+            <generator class="native" />
+        </id>
+        <property name="cardNumber" type="java.lang.String">
+            <column name="CARDNUMBER" />
+        </property>
+        <property name="expiryMonth" type="java.lang.String">
+            <column name="EXPIRYMONTH" />
+        </property>
+        <property name="expiryYear" type="java.lang.String">
+            <column name="EXPIRYYEAR" />
+        </property>
+        <property name="cvv" type="int">
+            <column name="CVV" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="zip" type="java.lang.String">
+            <column name="ZIP" />
+        </property>
+        <many-to-one name="invoiceBean" class="com.finalproject.ecommerceapp.pojos.InvoiceBean" fetch="join">
+            <column name="INVOICEBEAN" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
