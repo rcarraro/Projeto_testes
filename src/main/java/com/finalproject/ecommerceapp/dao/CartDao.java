@@ -15,7 +15,7 @@ public class CartDao extends DAO {
     public CartDao() {
 	
 	}
-    
+     
     public void addToCart(CustomerBean customerBean,CartItemBean cartItemBean) throws AdException {
         try {
             begin();
